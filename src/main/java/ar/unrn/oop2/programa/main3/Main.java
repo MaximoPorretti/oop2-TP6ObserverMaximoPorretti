@@ -12,7 +12,6 @@ import javax.swing.*;
 
 public class Main {
     public static void main(String[] args) {
-        // Inicializar archivos de datos
         new SetUpDatabase("concursos.txt", "inscriptos.txt").inicializar();
 
         SwingUtilities.invokeLater(() -> {
@@ -22,7 +21,7 @@ public class Main {
             ObservableServicioDeInscripciones servicioObservable = new ObservableServicioDeInscripciones(servicioReal);
             servicioObservable.addObserver(new EmailSenderObserver());
 
-            new RadioCompetition(repo, servicioObservable); // Cargar la UI con los servicios de archivos
+            new RadioCompetition(repo, servicioObservable);
         });
     }
 } 
